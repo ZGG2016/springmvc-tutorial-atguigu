@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h1>首页</h1>
+<a th:href="@{/reqmapping/test-0}"> 测试 reqmapping</a><br><br>
+
+<a th:href="@{/test-1}"> 测试 reqmapping --> /test-1</a><br><br>
+<a th:href="@{/test-2}"> 测试 reqmapping --> /test-2</a><br><br>
+
+<a th:href="@{/test-3}"> 测试 reqmapping --> GET </a><br><br>
+<form th:action="@{/test-3}" method="post">
+    <input type="submit" value="测试 reqmapping --> POST">
+</form><br>
+
+    <form th:action="@{/test-4}" method="post">
+        <input type="submit" value="测试 PostMapping">
+    </form><br>
+
+    <a th:href="@{/test-5(username='admin', password='p1234')}"> 测试 params 参数 </a><br><br>
+
+    <a th:href="@{/test-6}"> 测试 headers 参数 </a><br><br>
+
+    <a th:href="@{/test-7/abb/testant}"> 测试 ant风格的路径1 </a><br><br>
+    <a th:href="@{/test-7/a-b/testant}"> 测试 ant风格的路径2 </a><br><br>
+
+    <a th:href="@{/test-7/asdrb/testant}"> 测试 ant风格的路径3 </a><br><br>
+    <a th:href="@{/test-7/ab/testant}"> 测试 ant风格的路径4 </a><br><br>
+
+    <a th:href="@{/test-7/ab/aa/testant}"> 测试 ant风格的路径5 </a><br><br>
+
+    <a th:href="@{/test-8/admin/p1234}"> 测试 路径中的占位符  </a><br><br>
+
+    <a th:href="@{/test-servletapi(username='admin',password='p1234')}" > 测试 servlet api </a> <br><br>
+
+    <form th:action="@{/testparam-1}" method="get">
+        用户名：<input type="text" name="username"><br>
+        密码：<input type="password" name="password"><br>
+        爱好：<input type="checkbox" name="hobby" value="a">a
+        <input type="checkbox" name="hobby" value="b">b
+        <input type="checkbox" name="hobby" value="c">c<br>
+        <input type="submit" value="测试使用控制器的形参获取请求参数">
+    </form><br>
+
+    <form th:action="@{/testparam-2}" method="get">
+        用户名：<input type="text" name="user_name"><br>
+        密码：<input type="password" name="password"><br>
+        爱好：<input type="checkbox" name="hobby" value="a">a
+        <input type="checkbox" name="hobby" value="b">b
+        <input type="checkbox" name="hobby" value="c">c<br>
+        <input type="submit" value="测试@RequestParam">
+    </form><br>
+
+    <form th:action="@{/testparam-3}" method="post">
+        用户名：<input type="text" name="username"><br>
+        年龄：<input type="text" name="age"><br>
+        密码：<input type="password" name="password"><br>
+        <input type="submit" value="使用实体类接收请求参数">
+    </form><br>
+
+</body>
+</html>
